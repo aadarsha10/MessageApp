@@ -9,19 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MessageApp">
-        <activity android:name=".ConstraintDesignActivity">
+        <activity android:name=".CalendarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RelativeDesignLayout" />
-        <activity android:name=".RelativelayoutActivity" />
-        <activity android:name=".ImageActivity"></activity>
-        <activity android:name=".CalculatorActivity">
+        <activity android:name=".AlertBox" />
+        <activity android:name=".ConstraintDesignActivity">
 
         </activity>
+        <activity android:name=".RelativeDesignLayout" />
+        <activity android:name=".RelativelayoutActivity" />
+        <activity android:name=".ImageActivity" />
+        <activity android:name=".CalculatorActivity" />
         <activity android:name=".GridActivity" />
         <activity android:name=".MainActivity" />
     </application>
