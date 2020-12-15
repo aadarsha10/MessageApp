@@ -4,13 +4,9 @@ import android.app.DatePickerDialog
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.annotation.RequiresApi
-import java.time.LocalDate
-import java.time.Period
-import java.time.temporal.ChronoUnit
+
 import java.util.*
 
 class DateTimeDifferenceActivity : AppCompatActivity() {
@@ -44,11 +40,16 @@ class DateTimeDifferenceActivity : AppCompatActivity() {
         val day = c.get(Calendar.DAY_OF_MONTH)
 
         val datePickerDialog = DatePickerDialog(this,{view, yearUser,monthOfYear,dayOfMonth->
-            tvYearsworked.text="No of years worked: ${year-yearUser} years and ${(month+1)-(monthOfYear+1)} months"
+            if (monthOfYear==month){
+                tvYearsworked.text="Duration worked: ${year-yearUser} years and ${(monthOfYear+1)} months"
+            }else{
+                tvYearsworked.text="Duration worked: ${year-yearUser} years and ${(month+1)-(monthOfYear+1)} months"
+            }
+
+            etworkjoin.setText("$yearUser-${monthOfYear+1}-$dayOfMonth")
         },
             year,month,day)
         datePickerDialog.show()
-
 
     }
 
@@ -59,8 +60,14 @@ class DateTimeDifferenceActivity : AppCompatActivity() {
         val day = c.get(Calendar.DAY_OF_MONTH)
 
         val datePickerDialog = DatePickerDialog(this,{view, yearuser,monthOfYr,dayOfMonth->
-            tvAge.text="Your age: ${year - yearuser} years and ${(month+1)-(monthOfYr+1)} months"},
-            year-18,month,day)
+            if (monthOfYr==month){
+                tvAge.text="Your age: ${year - yearuser} years and ${(monthOfYr+1)} months"
+            }else{
+                tvAge.text="Your age: ${year - yearuser} years and ${(month+1)-(monthOfYr+1)} months"
+            }
+            etdob.setText("$yearuser-${monthOfYr+1}-$dayOfMonth")
+            },
+            year-20,month,day)
         datePickerDialog.show()
     }
 
